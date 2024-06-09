@@ -7,11 +7,17 @@ import java.util.Date;
 
 @Service
 public class TransacaoService {
-    private Transacao transacao;
 
-    public Transacao receberTransacao(Transacao dado) {
+    public int receberTransacao(Transacao dado) {
         Date d = new Date();
-        transacao = new Transacao(dado.getValor(), d);
-        return transacao;
+        Transacao transacao = new Transacao(dado.getValor(), d);
+        if (dado.getValor() <= 0 || d.getDate() > d.getDate()) {
+            return 422;
+        }
+        if (dado.toString().isEmpty()) {
+            return 400;
+        }
+        return 201;
+
     }
 }
