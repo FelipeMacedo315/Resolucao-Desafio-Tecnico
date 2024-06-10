@@ -1,25 +1,28 @@
 package com.example.desafio.tecnico.model;
 
+import java.util.ArrayList;
 import java.util.Date;
 
 public class Transacao {
-    private int valor;
+    public ArrayList<Transacao> listaDeTransacoes;
+    private Integer valor;
     private Date dataHora;
 
     public Transacao() {
 
     }
 
-    public Transacao(int valor, Date dataHora) {
+    public Transacao(Integer valor, Date dataHora) {
         this.valor = valor;
         this.dataHora = dataHora;
+
     }
 
-    public int getValor() {
+    public Integer getValor() {
         return valor;
     }
 
-    public void setValor(int valor) {
+    public void setValor(Integer valor) {
         this.valor = valor;
     }
 
